@@ -31,18 +31,20 @@ class SignUp extends React.Component<any, SignUpInfo> {
     };
     submit = async () => {
         const {username, password, configPassword}: SignUpInfo = this.state;
-
+        if(password !== configPassword){
+            alert("两次密码不相同");
+            return;
+        }
         try {
             await axios.post("sign_up/user", {
                 account: username,
                 password: password,
                 password_confirmation: configPassword
             });
-            console.log("成功");
+            window.open("/", '_self')
+
         } catch (e) {
             alert("用户名已存在或用户名不能为空");
-        } finally {
-            console.log("最终");
         }
 
     };
@@ -73,7 +75,7 @@ class SignUp extends React.Component<any, SignUpInfo> {
                                 className="input"
 
                 />
-                <p>已有账号? <Link to="/login">前往登录</Link></p>
+                <p>已有账户? <Link to="/signIn">前往登录</Link></p>
                 <Button type="primary" onClick={this.submit}>注册</Button>
             </div>
         );

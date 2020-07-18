@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import { SignUp } from "./components/signUp/SignUp";
 import { SignIn } from "./components/signIn/SignIn";
+import {Home} from "./components/Home/Home";
 
 export default function App() {
     return (
@@ -28,6 +29,3 @@ export default function App() {
     );
 }
 
-function Home() {
-    return <h2>Home</h2>;
-}
