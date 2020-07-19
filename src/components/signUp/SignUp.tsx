@@ -76,7 +76,7 @@ class SignUp extends React.Component<any, SignUpInfo> {
 
                 />
                 <p>已有账户? <Link to="/signIn">前往登录</Link></p>
-                <Button type="primary" onClick={this.submit}>注册</Button>
+                <Button type="primary" className='button' onClick={this.submit}>注册</Button>
             </div>
         );
     }

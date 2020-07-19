@@ -62,7 +62,7 @@ class SignIn extends React.Component<any, SignInInfo> {
 
                 />
                 <p>没有账户? <Link to="/signUp">马上注册</Link></p>
-                <Button type="primary" onClick={this.submit}>登录</Button>
+                <Button type="primary" className='button' onClick={this.submit}>登录</Button>
             </div>
         );
     }

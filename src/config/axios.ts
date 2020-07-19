@@ -30,6 +30,9 @@ instance.interceptors.response.use(function (response) {
     }
     return response;
 }, function (error) {
+    if(error.response.status === 401){
+        window.open("/signIn",'_self');
+    }
     return Promise.reject(error);
 });
 
